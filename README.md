@@ -1,22 +1,7 @@
-# 内核参数汇总
+# 缩写汇总
 
-第一次握手syn重传次数：tcp\_syn\_retries，默认5次
+MTU:MTU 最大传输单元（Maximum Transmission Unit，MTU）用来通知对方所能接受[数据服务](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%25E6%2595%25B0%25E6%258D%25AE%25E6%259C%258D%25E5%258A%25A1/23724818)单元的最大尺寸，说明发送方能够接受的[有效载荷](https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/%25E6%259C%2589%25E6%2595%2588%25E8%25BD%25BD%25E8%258D%25B7/3653893)大小。是包或帧的最大长度，一般以字节记。如果MTU过大，在碰到路由器时会被拒绝转发，因为它不能处理过大的包。如果太小，因为协议一定要在包(或帧)上加上包头，那实际传送的数据量就会过小，这样也划不来。大部分操作系统会提供给用户一个默认值，该值一般对用户是比较合适的。
 
-第二次握手的syn+ack重传次数：tcp\_synack\_retries,默认5次
+PMTU:当同一个网络上的两台主机互相进行通信时，该网络的MTU是非常重要。但是如果两台主机之间的通信要通过多个网络，每个网络的链路层可能有不同的MTU，那么这时重要的不是两台主机所在网络的MTU的值，而是两台主机通信路径中的最小MTU，称为路径MTU( Path mtu，PMTU)。
 
-第三次握手ack丢包会导致对方重传syn+ack，己方已建立连接，再发送报文如果对方未断开，报文内含ack，能建立连接。（第三次握手能携带数据，所以发送的数据报文发挥了握手报文的作用）若对方已断开则不会收到回应，则己方会触发超时重传，重传次数：tcp\_retries2，默认15次。
-
-保活机制：双方在一段时间内无任何连接相关的活动触发
-
-```
-保活时间，这段时间内无活动则触发保活，开始发送探测报文。time
-net.ipv4.tcp_keepalive_time=7200
-```
-
-<pre><code><strong>每隔这段时间发送一次。intvl
-</strong><strong>net.ipv4.tcp_keepalive_intvl=75  
-</strong></code></pre>
-
-<pre><code><strong>最大探测的次数.probes
-</strong><strong>net.ipv4.tcp_keepalive_probes=9
-</strong></code></pre>
+TCP MSS:MSS（Maximum Segment Size，最大报文长度），是TCP协议定义的一个选项，MSS选项用于在TCP连接建立时，收发双方协商通信时每一个报文段所能承载的最大数据长度。决定了一段数据要分多少个包发。
