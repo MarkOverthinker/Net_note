@@ -21,8 +21,8 @@ net.ipv4.tcp_keepalive_time=7200
 </strong><strong>net.ipv4.tcp_keepalive_probes=9
 </strong></code></pre>
 
-快速建立连接功能（fast open）:tcp\_fastopn
+**快速建立连接功能（fast open）**:tcp\_fastopn
 
-sack:tcp\_sack
+**sack**:tcp\_sack
 
-如果开启该选项的话，客户端（连接发起方） 在调用 connect() 函数时，**如果内核选择到的端口，已经被相同四元组的连接占用的时候，就会判断该连接是否处于 TIME\_WAIT 状态，如果该连接处于 TIME\_WAIT 状态并且 TIME\_WAIT 状态持续的时间超过了 1 秒，那么就会重用这个连接，然后就可以正常使用该端口了**。所以该选项只适用于连接发起方
+**tcp\_tw\_reuse:**如果开启该选项的话，客户端（连接发起方） 在调用 connect() 函数时，**如果内核选择到的端口，已经被相同四元组的连接占用的时候，就会判断该连接是否处于 TIME\_WAIT 状态，如果该连接处于 TIME\_WAIT 状态并且 TIME\_WAIT 状态持续的时间超过了 1 秒，那么就会重用这个连接，然后就可以正常使用该端口了**。所以该选项只适用于连接发起方
