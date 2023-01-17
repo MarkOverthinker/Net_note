@@ -16,3 +16,7 @@
 * [QUIC协议](tcp/quic-xie-yi.md)
 * [内核参数汇总](tcp/nei-he-can-shu-hui-zong.md)
 * [TCP四次挥手如何变成三次](tcp/tcp-si-ci-hui-shou-ru-he-bian-cheng-san-ci.md)
+
+## 面经补充
+
+* [osi模型和TCP/IP模型](mian-jing-bu-chong/osi-mo-xing-he-tcpip-mo-xing.md)
