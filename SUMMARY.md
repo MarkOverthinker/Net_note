@@ -20,3 +20,8 @@
 ## 面经补充
 
 * [osi模型和TCP/IP模型](mian-jing-bu-chong/osi-mo-xing-he-tcpip-mo-xing.md)
+* [DNS什么时候用TCP什么时候用UDP](mian-jing-bu-chong/dns-shi-mo-shi-hou-yong-tcp-shi-mo-shi-hou-yong-udp.md)
+
+***
+
+* [Page 1](page-1.md)
